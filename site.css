@@ -47,7 +47,10 @@ ul { margin: 0; padding: 0; list-style: none }
 .cellar { background: var(--cellar); color: var(--paper) }
 .eyebrow { font: 700 .78rem / 1 var(--body); letter-spacing: .28em; text-transform: uppercase; color: var(--brass-text); margin-bottom: 0.875rem }
 .cellar .eyebrow, .hero .eyebrow { color: var(--brass-light) }
-h2 { font: 700 clamp(2rem, 5vw, 3rem) / 1.1 var(--display); letter-spacing: .01em }
+h2 { font: italic 500 clamp(2.1rem, 5.4vw, 3.2rem) / 1.1 var(--display) }
+body:not(.legal-page) h2, .sec-title { text-wrap: balance }
+body:not(.legal-page) h2::before, body:not(.legal-page) h2::after, .sec-title::before, .sec-title::after { content: ""; display: inline-block; width: .16em; height: .76em; margin-right: .4em; vertical-align: -.06em; border-radius: .09em; transform: rotate(16deg); background: var(--basil) }
+body:not(.legal-page) h2::after, .sec-title::after { margin: 0 0 0 .4em; background: var(--pomodoro) }
 .kicker { font: italic 500 1.2rem / 1.4 var(--display); color: var(--muted); margin-top: 0.625rem }
 .ico { width: 1.2em; height: 1.2em; flex: none }
 .illu { width: calc(5.2rem / var(--s, 1)); max-width: 60%; height: auto; color: var(--brass-art); margin: 0 auto 0.875rem }
@@ -69,15 +72,15 @@ h2 { font: 700 clamp(2rem, 5vw, 3rem) / 1.1 var(--display); letter-spacing: .01e
 .topbar .call { display: inline-flex; align-items: center; gap: 0.5rem; min-height: 2.5rem; padding: 0.375rem 1rem; border-radius: 62.4375rem; background: var(--brass-light); color: var(--cellar); font: 700 .95rem / 1 var(--body); text-decoration: none }
 @media (max-width: 640px) { .topbar nav { display: none } }
 
-.hero { position: relative; background: var(--cellar); color: var(--paper); text-align: center; padding: clamp(1.75rem, 5vw, 3.5rem) var(--gutter) 4rem; min-height: calc(100svh - var(--bar)); display: grid; place-items: center }
-.vault { position: relative; width: min(100%, 45rem); padding: clamp(4.5rem, 10vh, 7rem) clamp(1.25rem, 6vw, 4.5rem) clamp(2rem, 5vw, 3rem); display: flex; flex-direction: column; align-items: center; gap: 1.125rem }
+.hero { position: relative; background: var(--cellar); color: var(--paper); text-align: center; padding: clamp(1.75rem, 5vw, 3.5rem) var(--gutter) 4rem; min-height: calc(100svh - var(--bar)); display: grid; grid-template-columns: minmax(0, 1fr); place-items: center }
+.vault { position: relative; min-width: 0; width: min(100%, 45rem); padding: clamp(4.5rem, 10vh, 7rem) max(1.25rem, min(11vw, 4.5rem)) clamp(2rem, 5vw, 3rem); display: flex; flex-direction: column; align-items: center; gap: 1.125rem }
 .vault .arch { position: absolute; inset: 0; width: 100%; height: 100%; color: var(--brass) }
 .vault > :not(.arch) { position: relative }
-.wordmark { display: grid; grid-template-columns: auto auto auto; align-items: center; gap: clamp(0.5rem, 2vw, 1.125rem) }
-.wordmark h1 { font: 400 clamp(3.2rem, 11vw, 5.8rem) / 1.02 var(--script); color: var(--paper) }
+.wordmark { display: grid; grid-template-columns: auto auto auto; align-items: center; gap: clamp(0.375rem, 1.6vw, 1.125rem) }
+.wordmark h1 { font: 400 clamp(2.5rem, 13vw, 5.8rem) / 1.02 var(--script); color: var(--paper) }
 .wordmark h1 span { display: block; font-size: .62em; margin-top: -.08em }
-.brush { width: clamp(1.375rem, 4vw, 2.125rem); height: auto }
-.tagline { font: italic 500 clamp(1.05rem, 2.6vw, 1.3rem) / 1.35 var(--display); color: var(--paper) }
+.brush { width: clamp(0.875rem, 3.6vw, 2.125rem); height: auto }
+.tagline { font: italic 500 clamp(1.05rem, 2.6vw, 1.3rem) / 1.35 var(--display); color: var(--paper); text-wrap: balance }
 .emblem { width: min(100%, 27.5rem, 52vh); height: auto; margin-block: 0.5rem 0.375rem }
 .status { display: inline-flex; align-items: center; gap: 0.5rem; font: 500 .98rem / 1.3 var(--body); color: var(--brass-light) }
 .status::before { content: ""; width: 0.5625rem; height: 0.5625rem; border-radius: 50%; background: var(--pomodoro); flex: none }
@@ -92,7 +95,7 @@ h2 { font: 700 clamp(2rem, 5vw, 3rem) / 1.1 var(--display); letter-spacing: .01e
 .letter p + p { margin-top: 1em }
 .letter .lead { font: italic 500 1.35rem / 1.5 var(--display); color: var(--ink) }
 .letter .closing { font: italic 500 1.25rem / 1.4 var(--display); margin-top: 1.4em }
-.letter .signature { font: 400 2.1rem / 1.2 var(--script); color: var(--brass-text); margin-top: .3em }
+.letter .signature { text-wrap: balance; font: 400 2.1rem / 1.2 var(--script); color: var(--brass-text); margin-top: .3em }
 
 .specials { text-align: center }
 .special-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 17.5rem), 1fr)); gap: 1.125rem; margin-top: 2.5rem; text-align: left }
@@ -125,8 +128,8 @@ h2 { font: 700 clamp(2rem, 5vw, 3rem) / 1.1 var(--display); letter-spacing: .01e
 .carta { max-width: 48.75rem; margin-top: 1rem }
 .sec { padding-top: 3.5rem }
 .sec header { text-align: center; margin-bottom: 1.375rem }
-.sec-title { font: 700 clamp(1.7rem, 4vw, 2.2rem) / 1.15 var(--display) }
-.sec .sub { font: italic 500 1.05rem / 1.3 var(--display); color: var(--brass-text); margin-top: 0.25rem }
+.sec-title { font: italic 500 clamp(1.8rem, 4.4vw, 2.4rem) / 1.15 var(--display) }
+.sec .sub, .welcome .sub { font: 500 .8rem / 1.3 var(--body); letter-spacing: .3em; text-transform: uppercase; color: var(--brass-text); margin-top: .5rem }
 .drinks { margin-top: 5.5rem; padding-top: 3.5rem; border-top: 1px solid var(--paper-2); text-align: center }
 .drinks .sec { text-align: left }
 .drinks-title { font-size: clamp(2rem, 5vw, 3rem) }
