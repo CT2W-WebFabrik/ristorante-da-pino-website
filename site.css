@@ -99,6 +99,7 @@ body:not(.legal-page) h2::after, .sec-title::after { margin: 0 0 0 .4em; backgro
 .welcome .illu { width: 5.5rem }
 .letter { margin-top: 2.25rem; text-align: left; font-size: 1.15rem; line-height: 1.7 }
 .letter p + p { margin-top: 1em }
+.letter .salutation { font: italic 500 1.25rem / 1.4 var(--display) }
 .letter .lead { font: italic 500 1.35rem / 1.5 var(--display); color: var(--ink) }
 .letter .closing { font: italic 500 1.25rem / 1.4 var(--display); margin-top: 1.4em }
 .letter .signature { text-wrap: balance; font: 400 2.1rem / 1.2 var(--script); color: var(--brass-text); margin-top: .3em }
